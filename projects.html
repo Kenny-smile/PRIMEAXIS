@@ -1,0 +1,1165 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Projects | PrimeAxis Projects Limited</title>
+
+<style>
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 90px;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #F7F6F2;
+    color: #222222;
+    line-height: 1.7;
+    width: 100%;
+    overflow-x: hidden;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+section {
+    width: 100%;
+}
+
+.container {
+    width: 100%;
+    max-width: 1400px;
+    margin: auto;
+    padding-left: 7%;
+    padding-right: 7%;
+}
+
+.section-heading {
+    text-align: center;
+    margin-bottom: 45px;
+}
+
+.section-label {
+    color: #C5A253;
+    font-size: 13px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    margin-bottom: 12px;
+}
+
+.section-heading h2 {
+    color: #0B1F33;
+    font-size: clamp(28px, 3.5vw, 40px);
+    line-height: 1.25;
+    margin-bottom: 18px;
+    overflow-wrap: anywhere;
+}
+
+.section-heading > p:last-child {
+    max-width: 750px;
+    margin: auto;
+}
+
+.button {
+    display: inline-block;
+    background: #C5A253;
+    color: #0B1F33;
+    padding: 14px 25px;
+    font-weight: bold;
+    border: 2px solid #C5A253;
+    transition: 0.3s ease;
+    text-align: center;
+    max-width: 100%;
+}
+
+.button:hover {
+    background: #0B1F33;
+    color: #F7F6F2;
+}
+
+
+/* NAVIGATION */
+
+nav {
+    background: #0B1F33;
+    padding: 15px 7%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 25px;
+    border-bottom: 2px solid #C5A253;
+}
+
+.logo-area {
+    flex-shrink: 0;
+}
+
+.logo-area img {
+    width: 70px;
+    height: 70px;
+    object-fit: contain;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    flex-wrap: wrap;
+    gap: 12px 25px;
+    list-style: none;
+}
+
+.nav-links a {
+    color: #F7F6F2;
+    font-size: 14px;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+    color: #C5A253;
+}
+
+
+/* HERO SECTION */
+
+.hero {
+    background: #0B1F33;
+    padding: 80px 7%;
+    text-align: center;
+    border-bottom: 2px solid #C5A253;
+}
+
+.hero-label {
+    color: #C5A253;
+    font-size: 13px;
+    font-weight: bold;
+    letter-spacing: 3px;
+    margin-bottom: 20px;
+}
+
+.hero h1 {
+    color: #F7F6F2;
+    font-size: clamp(36px, 6vw, 64px);
+    line-height: 1.2;
+    margin-bottom: 25px;
+    overflow-wrap: anywhere;
+}
+
+.hero h1 span {
+    color: #C5A253;
+}
+
+.hero > p:last-child {
+    color: #F7F6F2;
+    font-size: 17px;
+    line-height: 1.9;
+    max-width: 750px;
+    margin: auto;
+}
+
+
+/* FEATURED PROJECT */
+
+.featured {
+    padding-top: 80px;
+    padding-bottom: 80px;
+}
+
+.featured-grid {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 45px;
+    align-items: center;
+}
+
+.featured-image img {
+    width: 100%;
+    height: 500px;
+    object-fit: cover;
+    border: 3px solid #C5A253;
+}
+
+.featured-label {
+    color: #C5A253;
+    font-size: 13px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    margin-bottom: 15px;
+}
+
+.featured-content h2 {
+    color: #0B1F33;
+    font-size: clamp(28px, 3.5vw, 40px);
+    line-height: 1.3;
+    margin-bottom: 20px;
+    overflow-wrap: anywhere;
+}
+
+.featured-content > p:not(.featured-label) {
+    margin-bottom: 25px;
+}
+
+
+/* PORTFOLIO CARDS */
+
+.portfolio {
+    padding-top: 70px;
+    padding-bottom: 70px;
+}
+
+.portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 25px;
+}
+
+.project-card {
+    background: #0B1F33;
+    min-width: 0;
+    overflow: hidden;
+}
+
+.project-card > img {
+    width: 100%;
+    height: 280px;
+    object-fit: cover;
+    border-bottom: 3px solid #C5A253;
+}
+
+.project-card-content {
+    padding: 22px;
+}
+
+.project-number {
+    color: #C5A253;
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    overflow-wrap: anywhere;
+}
+
+.project-card h3 {
+    color: #F7F6F2;
+    font-size: 21px;
+    line-height: 1.4;
+    margin: 12px 0;
+    overflow-wrap: anywhere;
+}
+
+.project-card-content > p:last-child {
+    color: #F7F6F2;
+    font-size: 15px;
+    line-height: 1.8;
+}
+
+
+/* SELECTED WORK */
+
+.selected-work {
+    background: #0B1F33;
+    padding-top: 70px;
+    padding-bottom: 70px;
+}
+
+.selected-work .section-heading h2 {
+    color: #F7F6F2;
+}
+
+.selected-work .section-heading > p:last-child {
+    color: #F7F6F2;
+}
+
+.selected-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 25px;
+}
+
+.selected-card {
+    background: #F7F6F2;
+    min-width: 0;
+    overflow: hidden;
+}
+
+.selected-card img {
+    width: 100%;
+    height: 350px;
+    object-fit: cover;
+    border-bottom: 3px solid #C5A253;
+}
+
+.selected-card-content {
+    padding: 25px;
+}
+
+.selected-card-content > p:first-child {
+    color: #C5A253;
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.selected-card h3 {
+    color: #0B1F33;
+    font-size: 22px;
+    line-height: 1.4;
+    margin: 12px 0;
+    overflow-wrap: anywhere;
+}
+
+
+/* PROJECT GALLERY */
+
+.gallery {
+    padding-top: 70px;
+    padding-bottom: 70px;
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 30px 22px;
+}
+
+.gallery-card {
+    min-width: 0;
+}
+
+.gallery-card img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    border: 3px solid #C5A253;
+}
+
+.gallery-card h3 {
+    color: #0B1F33;
+    font-size: 19px;
+    line-height: 1.4;
+    margin-top: 15px;
+    overflow-wrap: anywhere;
+}
+
+
+/* BUILT WITH PURPOSE */
+
+.purpose {
+    background: #ECEBE7;
+    padding-top: 70px;
+    padding-bottom: 70px;
+}
+
+.purpose-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 25px;
+}
+
+.purpose-card {
+    background: #F7F6F2;
+    padding-bottom: 25px;
+    min-width: 0;
+    overflow: hidden;
+}
+
+.purpose-card img {
+    width: 100%;
+    height: 380px;
+    object-fit: cover;
+    border-bottom: 3px solid #C5A253;
+}
+
+.purpose-card-content {
+    padding: 22px;
+}
+
+.purpose-card h3 {
+    color: #0B1F33;
+    font-size: 22px;
+    line-height: 1.4;
+    overflow-wrap: anywhere;
+}
+
+.purpose-card-content p {
+    margin-top: 10px;
+}
+
+
+/* CALL TO ACTION */
+
+.cta {
+    background: #0B1F33;
+    padding: 70px 7%;
+    text-align: center;
+    border-top: 2px solid #C5A253;
+}
+
+.cta-label {
+    color: #C5A253;
+    font-size: 13px;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+.cta h2 {
+    color: #F7F6F2;
+    font-size: clamp(28px, 4vw, 38px);
+    line-height: 1.3;
+    margin: 15px 0;
+    overflow-wrap: anywhere;
+}
+
+.cta > p:not(.cta-label) {
+    color: #F7F6F2;
+    max-width: 650px;
+    margin: 0 auto 30px;
+}
+
+
+/* FOOTER */
+
+footer {
+    background: #0B1F33;
+    border-top: 1px solid #C5A253;
+    padding: 30px 7%;
+    text-align: center;
+}
+
+footer p {
+    color: #F7F6F2;
+    overflow-wrap: anywhere;
+}
+
+footer .tagline {
+    color: #C5A253;
+    margin-top: 10px;
+}
+
+
+/* TABLET RESPONSIVENESS */
+
+@media screen and (max-width: 1000px) {
+
+    nav {
+        padding: 15px 5%;
+        gap: 18px;
+    }
+
+    .nav-links {
+        gap: 12px 16px;
+    }
+
+    .container {
+        padding-left: 5%;
+        padding-right: 5%;
+    }
+
+    .featured-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 30px;
+    }
+
+    .featured-image img {
+        height: 400px;
+    }
+
+    .portfolio-grid,
+    .gallery-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .project-card:last-child {
+        grid-column: auto;
+    }
+}
+
+
+/* MOBILE RESPONSIVENESS */
+
+@media screen and (max-width: 700px) {
+
+    html {
+        scroll-padding-top: 20px;
+    }
+
+    nav {
+        flex-direction: column;
+        padding: 15px 5%;
+        gap: 15px;
+    }
+
+    .logo-area img {
+        width: 60px;
+        height: 60px;
+    }
+
+    .nav-links {
+        width: 100%;
+        justify-content: center;
+        gap: 12px 18px;
+    }
+
+    .nav-links a {
+        font-size: 13px;
+    }
+
+    .container {
+        padding-left: 5%;
+        padding-right: 5%;
+    }
+
+    .hero {
+        padding: 55px 6%;
+    }
+
+    .hero-label {
+        letter-spacing: 2px;
+        margin-bottom: 15px;
+    }
+
+    .hero h1 {
+        margin-bottom: 20px;
+    }
+
+    .hero > p:last-child {
+        font-size: 15px;
+        line-height: 1.8;
+    }
+
+    .featured {
+        padding-top: 45px;
+        padding-bottom: 45px;
+    }
+
+    .featured-grid {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 30px;
+    }
+
+    .featured-image img {
+        height: auto;
+        aspect-ratio: 4 / 3;
+    }
+
+    .featured-content h2 {
+        font-size: 30px;
+    }
+
+    .featured-content > p:not(.featured-label) {
+        font-size: 15px;
+    }
+
+    .portfolio,
+    .selected-work,
+    .gallery,
+    .purpose {
+        padding-top: 45px;
+        padding-bottom: 45px;
+    }
+
+    .section-heading {
+        margin-bottom: 30px;
+    }
+
+    .section-heading > p:last-child {
+        font-size: 15px;
+    }
+
+    .portfolio-grid,
+    .selected-grid,
+    .gallery-grid,
+    .purpose-grid {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 25px;
+    }
+
+    .project-card > img {
+        height: auto;
+        aspect-ratio: 4 / 3;
+    }
+
+    .project-card-content {
+        padding: 20px;
+    }
+
+    .project-card h3 {
+        font-size: 21px;
+    }
+
+    .selected-card img {
+        height: auto;
+        aspect-ratio: 4 / 3;
+    }
+
+    .selected-card-content {
+        padding: 20px;
+    }
+
+    .gallery-card img {
+        height: auto;
+        aspect-ratio: 4 / 3;
+    }
+
+    .purpose-card img {
+        height: auto;
+        aspect-ratio: 4 / 3;
+    }
+
+    .cta {
+        padding: 50px 6%;
+    }
+
+    .cta > p:not(.cta-label) {
+        font-size: 15px;
+    }
+
+    footer {
+        padding: 25px 5%;
+    }
+
+    footer p {
+        font-size: 14px;
+    }
+
+}
+
+
+/* SMALL PHONE RESPONSIVENESS */
+
+@media screen and (max-width: 380px) {
+
+    nav {
+        padding-left: 4%;
+        padding-right: 4%;
+    }
+
+    .nav-links {
+        gap: 10px 13px;
+    }
+
+    .nav-links a {
+        font-size: 12px;
+    }
+
+    .hero {
+        padding: 45px 5%;
+    }
+
+    .hero h1 {
+        font-size: 34px;
+    }
+
+    .container {
+        padding-left: 4%;
+        padding-right: 4%;
+    }
+
+    .project-card-content,
+    .selected-card-content,
+    .purpose-card-content {
+        padding: 17px;
+    }
+
+    .button {
+        padding: 12px 16px;
+        font-size: 14px;
+    }
+
+}
+
+</style>
+</head>
+
+<body>
+
+
+<!-- NAVIGATION -->
+
+<nav>
+
+    <a href="index.html" class="logo-area">
+        <img src="images/logo.jpeg"
+             alt="PrimeAxis Projects Limited logo">
+    </a>
+
+    <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="projects.html" class="active">Projects</a></li>
+        <li><a href="contact.html">Contact</a></li>
+    </ul>
+
+</nav>
+
+
+<!-- HERO SECTION -->
+
+<section class="hero">
+
+    <p class="hero-label">OUR PROJECTS</p>
+
+    <h1>Building <span>Value.</span></h1>
+
+    <p>
+        Explore selected projects and areas of work by
+        PrimeAxis Projects Limited across construction,
+        real estate, property management and building
+        materials supply.
+    </p>
+
+</section>
+
+
+<!-- FEATURED PROJECT -->
+
+<section class="featured">
+
+    <div class="container">
+
+        <div class="featured-grid">
+
+            <div class="featured-image">
+                <img src="images/project-1.jpg"
+                     alt="PrimeAxis featured project">
+            </div>
+
+            <div class="featured-content">
+
+                <p class="featured-label">FEATURED PROJECT</p>
+
+                <h2>Projects Designed Around Value</h2>
+
+                <p>
+                    Our projects reflect our commitment to quality,
+                    professionalism, functionality and lasting value.
+                    From construction and property development to
+                    property management and materials supply, we
+                    approach every project with purpose.
+                </p>
+
+                <a href="contact.html" class="button">
+                    Discuss Your Project →
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- PROJECT PORTFOLIO -->
+
+<section class="portfolio">
+
+    <div class="container">
+
+        <div class="section-heading">
+
+            <p class="section-label">PROJECT PORTFOLIO</p>
+
+            <h2>Our Areas of Work</h2>
+
+            <p>
+                Explore our work across construction, real estate,
+                property management and building materials supply.
+            </p>
+
+        </div>
+
+        <div class="portfolio-grid">
+
+            <article class="project-card">
+
+                <img src="images/project-2.jpg"
+                     alt="Construction project">
+
+                <div class="project-card-content">
+
+                    <p class="project-number">01 / CONSTRUCTION</p>
+
+                    <h3>Construction Projects</h3>
+
+                    <p>
+                        Building projects focused on quality
+                        and lasting value.
+                    </p>
+
+                </div>
+
+            </article>
+
+
+            <article class="project-card">
+
+                <img src="images/project-3.jpg"
+                     alt="Real estate project">
+
+                <div class="project-card-content">
+
+                    <p class="project-number">02 / REAL ESTATE</p>
+
+                    <h3>Real Estate Projects</h3>
+
+                    <p>
+                        Property opportunities and developments
+                        designed around value.
+                    </p>
+
+                </div>
+
+            </article>
+
+
+            <article class="project-card">
+
+                <img src="images/project-4.png"
+                     alt="Property management project">
+
+                <div class="project-card-content">
+
+                    <p class="project-number">
+                        03 / PROPERTY MANAGEMENT
+                    </p>
+
+                    <h3>Property Management</h3>
+
+                    <p>
+                        Professional property care and
+                        maintenance solutions.
+                    </p>
+
+                </div>
+
+            </article>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- SELECTED WORK -->
+
+<section class="selected-work">
+
+    <div class="container">
+
+        <div class="section-heading">
+
+            <p class="section-label">MORE PROJECTS</p>
+
+            <h2>Selected Work</h2>
+
+            <p>
+                A closer look at the different areas where PrimeAxis
+                Projects Limited provides professional solutions.
+            </p>
+
+        </div>
+
+        <div class="selected-grid">
+
+            <article class="selected-card">
+
+                <img src="images/project-5.png"
+                     alt="Residential construction project">
+
+                <div class="selected-card-content">
+
+                    <p>RESIDENTIAL</p>
+
+                    <h3>Residential Development</h3>
+
+                    <p>
+                        Professional solutions for residential
+                        construction and property development projects.
+                    </p>
+
+                </div>
+
+            </article>
+
+
+            <article class="selected-card">
+
+                <img src="images/project-6.jpg"
+                     alt="Commercial construction project">
+
+                <div class="selected-card-content">
+
+                    <p>COMMERCIAL</p>
+
+                    <h3>Commercial Development</h3>
+
+                    <p>
+                        Practical construction and development
+                        solutions for commercial spaces and businesses.
+                    </p>
+
+                </div>
+
+            </article>
+
+
+            <article class="selected-card">
+
+                <img src="images/project-7.jpg"
+                     alt="Property project">
+
+                <div class="selected-card-content">
+
+                    <p>PROPERTY</p>
+
+                    <h3>Property Solutions</h3>
+
+                    <p>
+                        Property solutions designed around
+                        functionality, care and long-term value.
+                    </p>
+
+                </div>
+
+            </article>
+
+
+            <article class="selected-card">
+
+                <img src="images/project-8.jpg"
+                     alt="Building materials project">
+
+                <div class="selected-card-content">
+
+                    <p>MATERIALS SUPPLY</p>
+
+                    <h3>Building Materials Supply</h3>
+
+                    <p>
+                        Reliable sourcing and supply support
+                        for construction and development projects.
+                    </p>
+
+                </div>
+
+            </article>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- PROJECT GALLERY -->
+
+<section class="gallery">
+
+    <div class="container">
+
+        <div class="section-heading">
+
+            <p class="section-label">PROJECT GALLERY</p>
+
+            <h2>More From Our Work</h2>
+
+            <p>
+                Our project gallery provides space to showcase
+                different stages, environments and completed work.
+            </p>
+
+        </div>
+
+        <div class="gallery-grid">
+
+            <article class="gallery-card">
+
+                <img src="images/project-9.jpg"
+                     alt="PrimeAxis project showcase">
+
+                <h3>Project Showcase</h3>
+
+            </article>
+
+
+            <article class="gallery-card">
+
+                <img src="images/project-10.jpg"
+                     alt="PrimeAxis development work">
+
+                <h3>Development Work</h3>
+
+            </article>
+
+
+            <article class="gallery-card">
+
+                <img src="images/project-11.jpg"
+                     alt="PrimeAxis construction work">
+
+                <h3>Construction Work</h3>
+
+            </article>
+
+
+            <article class="gallery-card">
+
+                <img src="images/project-12.jpg"
+                     alt="PrimeAxis property work">
+
+                <h3>Property Work</h3>
+
+            </article>
+
+
+            <article class="gallery-card">
+
+                <img src="images/project-13.jpg"
+                     alt="PrimeAxis project detail">
+
+                <h3>Project Detail</h3>
+
+            </article>
+
+
+            <article class="gallery-card">
+
+                <img src="images/project-14.jpg"
+                     alt="PrimeAxis completed work">
+
+                <h3>Completed Work</h3>
+
+            </article>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- BUILT WITH PURPOSE -->
+
+<section class="purpose">
+
+    <div class="container">
+
+        <div class="section-heading">
+
+            <p class="section-label">OUR WORK</p>
+
+            <h2>Built With Purpose</h2>
+
+            <p>
+                Every project represents our commitment to quality,
+                professionalism, integrity and lasting value.
+            </p>
+
+        </div>
+
+        <div class="purpose-grid">
+
+            <article class="purpose-card">
+
+                <img src="images/project-15.jpg"
+                     alt="PrimeAxis featured project">
+
+                <div class="purpose-card-content">
+
+                    <h3>Project Highlight</h3>
+
+                    <p>
+                        A showcase space for one of PrimeAxis
+                        Projects Limited's featured works.
+                    </p>
+
+                </div>
+
+            </article>
+
+
+            <article class="purpose-card">
+
+                <img src="images/project-16.jpg"
+                     alt="PrimeAxis completed or ongoing project">
+
+                <div class="purpose-card-content">
+
+                    <h3>Project Highlight</h3>
+
+                    <p>
+                        A dedicated space to showcase another
+                        completed or ongoing PrimeAxis project.
+                    </p>
+
+                </div>
+
+            </article>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- CALL TO ACTION -->
+
+<section class="cta">
+
+    <p class="cta-label">START YOUR PROJECT</p>
+
+    <h2>Have a Project in Mind?</h2>
+
+    <p>
+        Let's discuss your project requirements and explore
+        how PrimeAxis Projects Limited can help create
+        lasting value.
+    </p>
+
+    <a href="contact.html" class="button">
+        Contact PrimeAxis →
+    </a>
+
+</section>
+
+
+<!-- FOOTER -->
+
+<footer>
+
+    <p>
+        © 2026 PrimeAxis Projects Limited. All Rights Reserved.
+    </p>
+
+    <p class="tagline">
+        Building Value. Creating Possibilities.
+    </p>
+
+</footer>
+
+
+</body>
+</html>

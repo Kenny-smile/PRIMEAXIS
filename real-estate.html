@@ -1,0 +1,814 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Real Estate | PrimeAxis Projects Limited</title>
+
+    <style>
+        /* GENERAL STYLING */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #F7F6F2;
+            color: #222222;
+            font-size: 16px;
+            line-height: 1.7;
+            overflow-x: hidden;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        img {
+            max-width: 100%;
+        }
+
+
+        /* NAVIGATION */
+
+        nav {
+            background: #0B1F33;
+            padding: 16px 7%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 25px;
+        }
+
+        .logo-area {
+            display: flex;
+            align-items: center;
+            flex-shrink: 0;
+        }
+
+        .logo-area img {
+            width: 65px;
+            height: 65px;
+            object-fit: contain;
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 25px;
+        }
+
+        .nav-links a {
+            color: #F7F6F2;
+            font-size: 15px;
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover,
+        .nav-links a.active {
+            color: #C5A253;
+        }
+
+
+        /* HERO SECTION */
+
+        .hero {
+            background: #0B1F33;
+            padding: 70px 7%;
+            display: grid;
+            grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+            gap: 45px;
+            align-items: center;
+            border-bottom: 2px solid #C5A253;
+        }
+
+        .hero-content {
+            min-width: 0;
+        }
+
+        .hero-label {
+            color: #C5A253;
+            font-size: 13px;
+            font-weight: bold;
+            letter-spacing: 2.5px;
+            line-height: 1.5;
+            margin-bottom: 18px;
+        }
+
+        .hero h1 {
+            color: #F7F6F2;
+            font-size: 54px;
+            line-height: 1.15;
+            margin-bottom: 22px;
+        }
+
+        .hero h1 span {
+            color: #C5A253;
+        }
+
+        .hero-description {
+            color: #F7F6F2;
+            font-size: 16px;
+            line-height: 1.8;
+            margin-bottom: 25px;
+            max-width: 550px;
+        }
+
+        .button {
+            display: inline-block;
+            background: #C5A253;
+            color: #0B1F33;
+            padding: 13px 25px;
+            font-size: 15px;
+            font-weight: bold;
+            line-height: 1.5;
+            transition: all 0.3s ease;
+        }
+
+        .button:hover {
+            background: #F7F6F2;
+        }
+
+        .hero-image-wrap {
+            min-width: 0;
+        }
+
+        .hero-image {
+            display: block;
+            width: 100%;
+            height: 420px;
+            object-fit: cover;
+            border: 3px solid #C5A253;
+        }
+
+
+        /* SHARED SECTION STYLING */
+
+        .section {
+            padding: 70px 7%;
+        }
+
+        .section-label {
+            color: #C5A253;
+            font-size: 13px;
+            font-weight: bold;
+            letter-spacing: 2px;
+            line-height: 1.5;
+            text-align: center;
+        }
+
+        .section-title {
+            color: #0B1F33;
+            font-size: 34px;
+            line-height: 1.3;
+            text-align: center;
+            margin: 14px 0 18px;
+        }
+
+        .section-intro {
+            color: #222222;
+            font-size: 16px;
+            line-height: 1.8;
+            max-width: 750px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+
+        /* PROPERTY SOLUTIONS */
+
+        .solutions-intro {
+            padding-bottom: 65px;
+        }
+
+
+        /* SERVICE CARDS */
+
+        .services-panel {
+            background: #0B1F33;
+            padding: 65px 7%;
+        }
+
+        .panel-title {
+            color: #F7F6F2;
+            font-size: 34px;
+            line-height: 1.3;
+            text-align: center;
+            margin-bottom: 35px;
+        }
+
+        .service-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 22px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .service-card {
+            min-width: 0;
+            background: #F7F6F2;
+            padding: 25px;
+            border: 2px solid #C5A253;
+        }
+
+        .service-card h3 {
+            color: #0B1F33;
+            font-size: 20px;
+            line-height: 1.4;
+            margin-bottom: 10px;
+            overflow-wrap: break-word;
+        }
+
+        .service-card p {
+            color: #222222;
+            font-size: 15px;
+            line-height: 1.8;
+        }
+
+
+        /* MORE REAL ESTATE SERVICES */
+
+        .more-services {
+            background: #F7F6F2;
+        }
+
+        .more-services .service-card {
+            background: transparent;
+        }
+
+
+        /* WHY PRIMEAXIS */
+
+        .why-section {
+            background: #0B1F33;
+            padding: 70px 7%;
+        }
+
+        .why-content {
+            max-width: 750px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .why-content h2 {
+            color: #F7F6F2;
+            font-size: 34px;
+            line-height: 1.3;
+            margin: 14px 0 18px;
+        }
+
+        .why-content > p:last-child {
+            color: #F7F6F2;
+            font-size: 16px;
+            line-height: 1.8;
+        }
+
+
+        /* HOW WE HELP */
+
+        .approach-grid {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 22px;
+            margin-top: 35px;
+        }
+
+        .approach-card {
+            min-width: 0;
+            text-align: center;
+            padding: 25px 20px;
+            border-top: 3px solid #C5A253;
+        }
+
+        .approach-card h3 {
+            color: #0B1F33;
+            font-size: 20px;
+            line-height: 1.4;
+        }
+
+        .approach-card p {
+            color: #222222;
+            font-size: 15px;
+            line-height: 1.8;
+            margin-top: 10px;
+        }
+
+
+        /* PROPERTY CONFIDENCE */
+
+        .confidence-section {
+            background: #ECEBE7;
+        }
+
+
+        /* FINAL CONTACT SECTION */
+
+        .contact-section {
+            background: #0B1F33;
+            padding: 70px 7%;
+            text-align: center;
+            border-top: 2px solid #C5A253;
+        }
+
+        .contact-section h2 {
+            color: #F7F6F2;
+            font-size: 34px;
+            line-height: 1.3;
+            margin: 14px 0 18px;
+        }
+
+        .contact-section > p:not(.section-label) {
+            color: #F7F6F2;
+            font-size: 16px;
+            line-height: 1.8;
+            max-width: 650px;
+            margin: 0 auto 25px;
+        }
+
+
+        /* FOOTER */
+
+        .site-footer {
+            background: #0B1F33;
+            padding: 28px 7% 20px;
+            border-top: 1px solid #C5A253;
+            text-align: center;
+        }
+
+        .footer-copyright {
+            color: #F7F6F2;
+            font-size: 14px;
+            line-height: 1.7;
+        }
+
+        .footer-tagline {
+            color: #C5A253;
+            font-size: 14px;
+            line-height: 1.7;
+            margin-top: 8px;
+        }
+
+
+        /* TABLET RESPONSIVENESS */
+
+        @media (max-width: 900px) {
+
+            nav {
+                padding: 16px 5%;
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .nav-links {
+                gap: 18px;
+            }
+
+            .hero {
+                padding: 55px 5%;
+                gap: 30px;
+            }
+
+            .hero h1 {
+                font-size: 43px;
+            }
+
+            .hero-image {
+                height: 340px;
+            }
+
+            .section,
+            .services-panel,
+            .why-section,
+            .contact-section {
+                padding-left: 5%;
+                padding-right: 5%;
+            }
+        }
+
+
+        /* MOBILE RESPONSIVENESS */
+
+        @media (max-width: 600px) {
+
+            body {
+                font-size: 15px;
+            }
+
+            nav {
+                padding: 14px 5%;
+            }
+
+            .logo-area img {
+                width: 58px;
+                height: 58px;
+            }
+
+            .nav-links {
+                width: 100%;
+                gap: 10px 15px;
+            }
+
+            .nav-links a {
+                font-size: 13px;
+            }
+
+            .hero {
+                grid-template-columns: minmax(0, 1fr);
+                padding: 45px 6%;
+                gap: 30px;
+            }
+
+            .hero h1 {
+                font-size: 36px;
+                line-height: 1.2;
+                margin-bottom: 17px;
+            }
+
+            .hero-label {
+                font-size: 12px;
+            }
+
+            .hero-description {
+                font-size: 15px;
+                margin-bottom: 20px;
+            }
+
+            .hero-image {
+                height: 260px;
+            }
+
+            .button {
+                font-size: 14px;
+                padding: 12px 20px;
+            }
+
+            .section,
+            .services-panel,
+            .why-section,
+            .contact-section {
+                padding: 48px 6%;
+            }
+
+            .section-title,
+            .panel-title,
+            .why-content h2,
+            .contact-section h2 {
+                font-size: 27px;
+            }
+
+            .section-intro,
+            .why-content > p:last-child,
+            .contact-section > p:not(.section-label) {
+                font-size: 15px;
+            }
+
+            .service-grid {
+                grid-template-columns: minmax(0, 1fr);
+                gap: 16px;
+            }
+
+            .service-card {
+                padding: 22px;
+            }
+
+            .service-card h3,
+            .approach-card h3 {
+                font-size: 19px;
+            }
+
+            .service-card p,
+            .approach-card p {
+                font-size: 14px;
+            }
+
+            .approach-grid {
+                grid-template-columns: minmax(0, 1fr);
+                gap: 15px;
+                margin-top: 25px;
+            }
+
+            .approach-card {
+                padding: 22px 15px;
+            }
+
+            .site-footer {
+                padding: 25px 6% 18px;
+            }
+
+            .footer-copyright,
+            .footer-tagline {
+                font-size: 12px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- NAVIGATION -->
+
+    <nav>
+        <a href="index.html" class="logo-area">
+            <img src="images/logo.jpeg"
+                 alt="PrimeAxis Projects Limited Logo">
+        </a>
+
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="projects.html">Projects</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+
+
+    <!-- HERO SECTION -->
+
+    <section class="hero">
+
+        <div class="hero-content">
+
+            <p class="hero-label">02 / REAL ESTATE</p>
+
+            <h1>
+                Property.<br>
+                <span>With Purpose.</span>
+            </h1>
+
+            <p class="hero-description">
+                PrimeAxis Projects Limited provides professional
+                real estate solutions that help individuals,
+                businesses and investors make sound property
+                decisions and create lasting value.
+            </p>
+
+            <a href="contact.html" class="button">
+                Discuss Your Property Needs →
+            </a>
+
+        </div>
+
+        <div class="hero-image-wrap">
+            <img
+                src="images/real estate.png"
+                alt="PrimeAxis real estate property"
+                class="hero-image">
+        </div>
+
+    </section>
+
+
+    <!-- PROPERTY SOLUTIONS INTRODUCTION -->
+
+    <section class="section solutions-intro">
+
+        <p class="section-label">OUR REAL ESTATE SERVICES</p>
+
+        <h2 class="section-title">Property Solutions</h2>
+
+        <p class="section-intro">
+            We provide practical real estate services that support
+            property acquisition, investment, development and
+            informed decision-making.
+        </p>
+
+    </section>
+
+
+    <!-- WHAT WE DO -->
+
+    <section class="services-panel">
+
+        <h2 class="panel-title">What We Do</h2>
+
+        <div class="service-grid">
+
+            <div class="service-card">
+                <h3>Property Sales &amp; Acquisition</h3>
+
+                <p>
+                    Support for clients looking to buy, sell or acquire
+                    properties that align with their needs and objectives.
+                </p>
+            </div>
+
+            <div class="service-card">
+                <h3>Land Sales &amp; Acquisition</h3>
+
+                <p>
+                    Guidance and support for land acquisition and
+                    property opportunities.
+                </p>
+            </div>
+
+            <div class="service-card">
+                <h3>Property Sourcing</h3>
+
+                <p>
+                    Helping clients identify suitable properties based
+                    on their requirements and investment goals.
+                </p>
+            </div>
+
+            <div class="service-card">
+                <h3>Real Estate Consultancy</h3>
+
+                <p>
+                    Professional guidance to help clients make
+                    informed real estate decisions.
+                </p>
+            </div>
+
+        </div>
+
+    </section>
+    <!-- MORE REAL ESTATE SERVICES -->
+
+    <section class="section more-services">
+
+        <h2 class="section-title">More Real Estate Services</h2>
+
+        <div class="service-grid">
+
+            <div class="service-card">
+                <h3>Property Investment Opportunities</h3>
+
+                <p>
+                    We help clients explore property opportunities
+                    that can support their long-term investment goals.
+                </p>
+            </div>
+
+            <div class="service-card">
+                <h3>Property Development</h3>
+
+                <p>
+                    Support for property development projects with
+                    attention to planning, value and practical execution.
+                </p>
+            </div>
+
+            <div class="service-card">
+                <h3>Property Verification</h3>
+
+                <p>
+                    We support clients with property verification and
+                    due diligence before making important decisions.
+                </p>
+            </div>
+
+            <div class="service-card">
+                <h3>Real Estate Advisory</h3>
+
+                <p>
+                    Practical guidance designed to help individuals,
+                    businesses and investors navigate property decisions.
+                </p>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- WHY PRIMEAXIS -->
+
+    <section class="why-section">
+
+        <div class="why-content">
+
+            <p class="section-label">WHY PRIMEAXIS</p>
+
+            <h2>Real Estate Built Around Value</h2>
+
+            <p>
+                We focus on reliable information, professional guidance
+                and practical solutions that help clients make confident
+                property decisions and create lasting value.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- OUR APPROACH -->
+
+    <section class="section">
+
+        <p class="section-label">OUR APPROACH</p>
+
+        <h2 class="section-title">How We Help</h2>
+
+        <div class="approach-grid">
+
+            <div class="approach-card">
+
+                <h3>1. Understand</h3>
+
+                <p>
+                    We understand your property needs, goals and
+                    requirements before recommending a direction.
+                </p>
+
+            </div>
+
+            <div class="approach-card">
+
+                <h3>2. Guide</h3>
+
+                <p>
+                    We provide practical guidance and relevant
+                    information to support informed decisions.
+                </p>
+
+            </div>
+
+            <div class="approach-card">
+
+                <h3>3. Deliver</h3>
+
+                <p>
+                    We work toward solutions that create lasting
+                    value for our clients and their properties.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- PROPERTY WITH CONFIDENCE -->
+
+    <section class="section confidence-section">
+
+        <p class="section-label">PROPERTY WITH CONFIDENCE</p>
+
+        <h2 class="section-title">Make Better Property Decisions</h2>
+
+        <p class="section-intro">
+            Whether you are buying land, acquiring a property,
+            exploring an investment opportunity or developing
+            a project, PrimeAxis Projects Limited is here to
+            provide dependable real estate support.
+        </p>
+
+    </section>
+
+
+    <!-- FINAL CONTACT SECTION -->
+
+    <section class="contact-section">
+
+        <p class="section-label">LET'S FIND THE RIGHT OPPORTUNITY</p>
+
+        <h2>Ready to Discuss Your Property Needs?</h2>
+
+        <p>
+            Whether you are looking to acquire property, explore
+            an investment opportunity or develop a project,
+            PrimeAxis Projects Limited is ready to help.
+        </p>
+
+        <a href="contact.html" class="button">
+            Contact PrimeAxis →
+        </a>
+
+    </section>
+
+
+    <!-- FOOTER -->
+
+    <footer class="site-footer">
+
+        <p class="footer-copyright">
+            © 2026 PrimeAxis Projects Limited. All Rights Reserved.
+        </p>
+
+        <p class="footer-tagline">
+            Building Value. Creating Possibilities.
+        </p>
+
+    </footer>
+
+</body>
+
+</html>
